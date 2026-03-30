@@ -1,5 +1,17 @@
 @media (max-width: 768px) {
+
   #gamesContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  #searchInput {
+    width: 70%;
+    margin-bottom: 10px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

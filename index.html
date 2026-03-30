@@ -14,12 +14,23 @@
 
 <body>
     <header>
+        <a href="favorites.html">⭐ Favorites</a>
         <h1>🎮 Video Game Discovery</h1>
+        <p>Search any video game of your choice!</p>
         <input type="text" id="searchInput" placeholder="Search for games...">
         <button id="searchBtn">Search</button>
+        <button id="loadMoreBtn">Load More</button>
     </header>
 
     <main>
+        <select id="genreFilter">
+            <option value="">All Genres</option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="role-playing-games-rpg">RPG</option>
+            <option value="strategy">Strategy</option>
+            <option value="sports">Sports</option>
+        </select>
         <div id="gamesContainer"></div>
     </main>
     <footer>

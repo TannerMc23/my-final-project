@@ -12,6 +12,11 @@ export function displayGames(games) {
       <p>Rating: ${game.rating}</p>
     `;
 
+    // 🔥 Add this
+    card.addEventListener("click", () => {
+      window.location.href = `details.html?id=${game.id}`;
+    });
+
     container.appendChild(card);
   });
 }
