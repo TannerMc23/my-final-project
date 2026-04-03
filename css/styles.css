@@ -59,14 +59,19 @@ header h1 {
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
 .game-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover img {
+  transform: scale(1.05);
 }
 
 .game-card h3 {
@@ -88,12 +93,14 @@ footer {
   padding: 20px;
   max-width: 900px;
   margin: auto;
+  animation: fadeIn 0.5s ease-in;
 }
 
 #gameDetails img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 #gameDetails h1 {
@@ -119,6 +126,17 @@ button {
   background: #3b82f6;
   color: white;
   cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #2563eb;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
 }
 
 a {
@@ -138,8 +156,72 @@ a {
   cursor: pointer;
 }
 
+#loadMoreBtn:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+}
+
 #genreFilter {
   padding: 10px;
   margin: 10px;
   border-radius: 8px;
+  border: none;
+  background: #1e1e1e;
+  color: white;
+}
+
+#platformFilter {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #1e1e1e;
+  color: white;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;      
+  height: 60vh;             
+  text-align: center;
+  font-size: 18px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.loading p {
+  margin-bottom: 10px;
+}
+
+.loading::after {
+  content: "";
+  display: block;
+  margin: 20px auto;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #3b82f6;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeIn 0.5s ease-in;
 }

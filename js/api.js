@@ -1,11 +1,15 @@
 import { RAWG_API_KEY, YOUTUBE_API_KEY } from "../data/config.js";
 
 // 🔍 Fetch list of games (SEARCH PAGE)
-export async function fetchGames(query, page = 1, genre = "") {
+export async function fetchGames(query, page = 1, genre = "", platform = "") {
     let url = `https://api.rawg.io/api/games?key=${RAWG_API_KEY}&search=${query}&page=${page}`;
 
     if (genre) {
         url += `&genres=${genre}`;
+    }
+
+    if (platform) {
+    url += `&platforms=${platform}`;
     }
 
     try {

@@ -25,3 +25,8 @@ export function removeFavorite(id) {
   favorites = favorites.filter(game => game.id !== id);
   saveFavorites(favorites);
 }
+
+export function isFavorite(id) {
+  const favorites = getFavorites();
+  return favorites.some(game => game.id === id);
+}
